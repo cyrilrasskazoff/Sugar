@@ -14,21 +14,28 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
-def browser(request):
+# @pytest.fixture(scope="class")
+def driver(request):
     browser_name = request.config.getoption("browser_name")
-    browser = None
+    driver = None
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
         options = Options()
+        # options.add_argument("--window-size=1440,900")
+        # options.add_argument("start-maximized")
+        # options.add_argument("headless")
+        options.add_argument("start-fullscreen")
         service = Service(executable_path=ChromeDriverManager().install())
-        browser = webdriver.Chrome(options=options, service=service)
+        driver = webdriver.Chrome(options=options, service=service)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
         options_firefox = OptionsFirefox()
+        # options_firefox.add_argument("headless")
+        options_firefox.add_argument("start-fullscreen")
         service = Service(executable_path=GeckoDriverManager().install())
-        browser = webdriver.Firefox(options=options_firefox, service=service)
+        driver = webdriver.Firefox(options=options_firefox, service=service)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
-    yield browser
+    yield driver
     print("\nquit browser..")
-    browser.quit()
+    driver.quit()
