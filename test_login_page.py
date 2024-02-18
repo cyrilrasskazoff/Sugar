@@ -15,6 +15,6 @@ def test_admin_user_is_navigated_to_home_page_after_login(driver):
     page = LoginPage(driver, url)
     page.open()
     page.login_admin_and_navigate_to_home_page()
-    home_page = HomePage(driver, url)
+    home_page = HomePage(driver, driver.current_url)
     home_page.should_be_home_page()
 
