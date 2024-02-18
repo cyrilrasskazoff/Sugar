@@ -18,4 +18,17 @@ class LoginPageLocators:
 
 class HomePageLocators:
     SUGAR_LOGO = (By.CSS_SELECTOR, "[title='SugarCRM']")
+    HAMBURGER_MENU = (By.ID, "expand-menu_sidebar-nav-item")
+    ACCOUNTS_MENU_LINK = (By.ID, 'Accounts_sidebar-nav-item')
+
+
+class AccountsPageLocators:
+    ACCOUNTS_TITLE = (By.XPATH, '//*[@id="content"]/div/div/div[1]/div[2]/div/h1/span[1]/span/span/span/div')
+
+
+
+
+
+
+
 
