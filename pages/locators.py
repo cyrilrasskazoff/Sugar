@@ -25,8 +25,19 @@ class SidebarLocators:
     ACCOUNTS_MENU_LINK = (By.ID, 'Accounts_sidebar-nav-item')
 
 
+class ListViewLocators:
+    BUILD_FILTER_BUTTON = (By.XPATH, "//span[text()= 'Build Filter']")
+    CREATE_BUTTON = (By.NAME, "create_button")
+
+
 class AccountsPageLocators:
     ACCOUNTS_TITLE = (By.XPATH, '//*[@id="content"]/div/div/div[1]/div[2]/div/h1/span[1]/span/span/span/div')
+    NAME_INPUT = (By.CSS_SELECTOR, "[aria-label='Name']")
+    SAVE_BUTTON = (By.NAME, "save_button")
+
+
+
+
 
 
 

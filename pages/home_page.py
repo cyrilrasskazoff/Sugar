@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from .locators import HomePageLocators
 from .locators import SidebarLocators
-import selenium.common
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
