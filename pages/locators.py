@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "[name ='login']")
     USERNAME = (By.CSS_SELECTOR, "[id = 'username']")
-    PASSWORD = (By.CSS_SELECTOR, "[id = 'password']")
+    PASS = (By.CSS_SELECTOR, "[id = 'password']")
     LOGIN_BUTTON = (By.CSS_SELECTOR, "[id='submit_btn']")
     FIRSTLOGIN_FORM = (By.CSS_SELECTOR, "[class='firstlogin-title consent-firstlogin-title']")
     ACCEPT_CHECKBOX = (By.CSS_SELECTOR, "[type='checkbox']")
