@@ -19,7 +19,7 @@ class LoginPage(BasePage):
         user = USER
         user_name_field = self.driver.find_element(*LoginPageLocators.USERNAME)
         user_name_field.send_keys(user)
-        password_field = self.driver.find_element(*LoginPageLocators.PASSWORD)
+        password_field = self.driver.find_element(*LoginPageLocators.PASS)
         password_field.send_keys(password)
         login_button = self.driver.find_element(*LoginPageLocators.LOGIN_BUTTON)
         login_button.click()
