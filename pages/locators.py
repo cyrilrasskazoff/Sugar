@@ -34,6 +34,7 @@ class AccountsPageLocators:
     ACCOUNTS_TITLE = (By.XPATH, '//*[@id="content"]/div/div/div[1]/div[2]/div/h1/span[1]/span/span/span/div')
     NAME_INPUT = (By.CSS_SELECTOR, "[aria-label='Name']")
     SAVE_BUTTON = (By.NAME, "save_button")
+    ACCOUNT_RECORDS = (By.CSS_SELECTOR, "[class = 'ellipsis_inline Accounts']")
 
 
 

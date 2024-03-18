@@ -1,10 +1,12 @@
+import selenium
 from .base_page import BasePage
 from .list_vew_page import ListViewPage
 from .locators import AccountsPageLocators
 from .locators import ListViewLocators
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import random
@@ -38,7 +40,21 @@ class AccountsPage(ListViewPage): # наследует ListViewPage (котор�
         save_btn = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(AccountsPageLocators.SAVE_BUTTON))
         save_btn.click()
-        time.sleep(5)
+        try:
+            account_records = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_all_elements_located(AccountsPageLocators.ACCOUNT_RECORDS))
+            lst = []
+            for rcd in account_records:
+                lst.append(rcd.text)
+            assert AccountsPage.account_name in lst, "Account Record not found"
+            # print(lst)
+            # print(AccountsPage.account_name)
+        except selenium.common.StaleElementReferenceException:
+            pass
+
+
+
+
 
 
 

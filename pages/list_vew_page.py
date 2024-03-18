@@ -16,5 +16,3 @@ class ListViewPage(BasePage):
     def should_be_create_button(self):
         assert self.is_element_present(*ListViewLocators.CREATE_BUTTON), "Not a ListView page or Create " \
                                                                          "button is missing"
-
-
